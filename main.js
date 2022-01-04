@@ -1,7 +1,8 @@
 var titulos = document.getElementById("ttulo"),
 msg         = document.getElementById("txt"),
 corpo       = document.getElementsByClassName('lista'),
-i           = 0
+i           = 0,
+tst         =[]
 
  document.getElementById("btn").addEventListener('click',function(){
    
@@ -10,22 +11,25 @@ i           = 0
         return false
     }else{
         var   dataCria   = new Date(),
-        lis        = i + 1
+        lis        = ++i
         i          = lis
-        console.log(i)
+tst.push(corpo[0])
+console.log(tst)
+console.log(i)
 if((i%2)==0){
-    return corpo[0].innerHTML +=`<div class='etiq1' id="i${i}">
+     corpo[0].innerHTML +=`<div class='etiq1' id="i${i}">
     <h3>${titulos.value}</h3>
     <div class="btns">
-        <button>editar</button>
+        <button onclick="editar()">editar</button>
         <button>apagar</button>
         <button>gravar</button>
     </div>
     <p>${msg.value}</p>
        ${dataCria.getUTCDay()}
-   </div>`;
+   </div> `
+  msg.value=""
 }else{
-  return  corpo[0].innerHTML +=`<div class='etiq' id="i${i}">
+   corpo[0].innerHTML +=`<div class='etiq' id="i${i}">
   <h3>${titulos.value}</h3>
   <div class="btns">
       <button onclick="editar()">editar</button>
@@ -35,12 +39,26 @@ if((i%2)==0){
   <p>${msg.value}</p>
      ${dataCria.getUTCDay()}
  </div>`;
+ msg.value=""
 }
 }
  })
  function editar(){
-      var txtE=document.getElementById('i1')
- console.log(txtE.getElementsByTagName('p'))
+     if(i<=1){
+         alert(true)
+         i = i-1
+        console.log(i)
+  var txt =  tst[i].children.i1.children[2].textContent
+    msg.value = txt
+    console.log(txt)
+     }else{
+         alert(false)
+        i = i-1
+        var txt =  tst[1].children.i2.children[2].textContent
+        msg.value = txt
+        console.log(txt)
+     }
+     
  }
 
 /* 
