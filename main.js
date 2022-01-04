@@ -14,7 +14,7 @@ i           = 0
         i          = lis
         console.log(i)
 if((i%2)==0){
-    return corpo[0].innerHTML +=`<div class='etiq1'>
+    return corpo[0].innerHTML +=`<div class='etiq1' id="i${i}">
     <h3>${titulos.value}</h3>
     <div class="btns">
         <button>editar</button>
@@ -25,10 +25,10 @@ if((i%2)==0){
        ${dataCria.getUTCDay()}
    </div>`;
 }else{
-  return  corpo[0].innerHTML +=`<div class='etiq'>
+  return  corpo[0].innerHTML +=`<div class='etiq' id="i${i}">
   <h3>${titulos.value}</h3>
   <div class="btns">
-      <button>editar</button>
+      <button onclick="editar()">editar</button>
       <button>apagar</button>
       <button>gravar</button>
   </div>
@@ -38,6 +38,11 @@ if((i%2)==0){
 }
 }
  })
+ function editar(){
+      var txtE=document.getElementById('i1')
+ console.log(txtE.getElementsByTagName('p'))
+ }
+
 /* 
 function etiqueta(titulo,texto){
  let corpo  = document.getElementsByClassName('lista'),
