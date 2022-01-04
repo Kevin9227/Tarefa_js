@@ -1,12 +1,19 @@
 var titulos = document.getElementById("ttulo"),
-msg         = document.getElementById("txt")
-var bat    = document.getElementById("btn").addEventListener('click',function(){
-    var corpo  = document.getElementsByClassName('lista'),  i=0, 
-    dataCria    = new Date(), lis
-    lis     =  parseInt(bat.title)+1
-    i       =   lis
-    console.log(bat)
-if(i%2==0){
+msg         = document.getElementById("txt"),
+corpo       = document.getElementsByClassName('lista'),
+i           = 0
+
+ document.getElementById("btn").addEventListener('click',function(){
+   
+    if(titulos.value==='' || msg.value===''){
+        alert('O titulo ou a messagem não pode ser vazio...')
+        return false
+    }else{
+        var   dataCria   = new Date(),
+        lis        = i + 1
+        i          = lis
+        console.log(i)
+if((i%2)==0){
     return corpo[0].innerHTML +=`<div class='etiq1'>
     <h3>${titulos.value}</h3>
     <div class="btns">
@@ -29,7 +36,8 @@ if(i%2==0){
      ${dataCria.getUTCDay()}
  </div>`;
 }
-})
+}
+ })
 /* 
 function etiqueta(titulo,texto){
  let corpo  = document.getElementsByClassName('lista'),
