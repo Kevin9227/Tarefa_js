@@ -24,7 +24,7 @@ if((i%2)==0){
         <button>apagar</button>
         <button>gravar</button>
     </div>
-    <p>${msg.value}</p>
+    <p id="txt${i}">${msg.value}</p>
        ${dataCria.getUTCDay()}
    </div> `
   msg.value=""
@@ -34,9 +34,9 @@ if((i%2)==0){
   <div class="btns">
       <button onclick="editar()">editar</button>
       <button>apagar</button>
-      <button>gravar</button>
+      <button onclik="alterar()">gravar</button>
   </div>
-  <p>${msg.value}</p>
+  <p id="txt${i}">${msg.value}</p>
      ${dataCria.getUTCDay()}
  </div>`;
  msg.value=""
@@ -46,20 +46,45 @@ if((i%2)==0){
  function editar(){
      if(i<=1){
          alert(true)
-         i = i-1
+     var   nr
+      nr = i-1
         console.log(i)
-  var txt =  tst[i].children.i1.children[2].textContent
+   txt =  tst[nr].children.i1.children[2].textContent
     msg.value = txt
     console.log(txt)
      }else{
          alert(false)
-        i = i-1
-        var txt =  tst[1].children.i2.children[2].textContent
+      var txt, nr , t='i'
+      nr =i-1
+         console.log(nr)
+         txt =  tst[nr].children.t+nr.children[2].textContent
         msg.value = txt
-        console.log(txt)
+        
      }
      
  }
+ function alterar(){
+    var   nr
+    nr = i-1
+      console.log(i)
+ txt =  tst[nr].children.i1.children[2].textContent
+ msg.value 
+ }
+document.getElementById("ck").addEventListener('',function(){
+    if(this.value=='0'){
+        this.value='1'
+       var rr = document.getElementById("txt"+i)
+       console.log(rr.innerText)
+
+    }else{
+        this.value='0'
+        document.querySelector("ul").style.display='none';
+    }
+    var tst = document.getElementById('ts')
+    console.log(tst)
+})
+
+
 
 /* 
 function etiqueta(titulo,texto){
