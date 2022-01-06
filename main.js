@@ -16,9 +16,10 @@ tst         =[]
 tst.push(corpo[0])
 console.log(tst)
 console.log(i)
+console.log(msg)
 if((i%2)==0){
      corpo[0].innerHTML +=`<div class='etiq1' id="i${i}">
-    <h3>${titulos.value}</h3>
+   <div class="titulo"> <h3>${titulos.value}</h3></div>
     <div class="btns">
         <button onclick="editar()">editar</button>
         <button>apagar</button>
@@ -28,9 +29,10 @@ if((i%2)==0){
        ${dataCria.getUTCDay()}
    </div> `
   msg.value=""
+  console.log(msg.length)
 }else{
    corpo[0].innerHTML +=`<div class='etiq' id="i${i}">
-  <h3>${titulos.value}</h3>
+   <div class="titulo1"> <h3>${titulos.value}</h3></div>
   <div class="btns">
       <button onclick="editar()">editar</button>
       <button>apagar</button>
@@ -39,7 +41,9 @@ if((i%2)==0){
   <p id="txt${i}">${msg.value}</p>
      ${dataCria.getUTCDay()}
  </div>`;
- msg.value=""
+  
+  msg.value=""
+
 }
 }
  })

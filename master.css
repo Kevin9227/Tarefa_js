@@ -3,15 +3,18 @@
     padding: 0;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+body{
+    height: auto;
+    background:linear-gradient(rgb(0, 162, 255), rgb(196, 238, 255));
+
+}
 .body{
     width: 100%;
-    height: au;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    background:linear-gradient(rgb(0, 162, 255), rgb(196, 238, 255));
-    background-size: cover ;
 }
 /* ESTILIZAÇÃO DOS CAMPOS DE TEXTO*/
 form{
@@ -56,34 +59,47 @@ input[type="button"]{
     flex-flow:wrap;
     justify-content: center;
     width: 100%;
-    height: auto;
+    
     margin-top: 50px;
+    overflow-y:auto ;
+}
+.titulo {
+    background-color: rgba(231, 207,255);
+    width: 450px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.titulo1 {
+    background-color: rgba(255, 242,171);
+    width: 450px;
+    height: 50px;
 }
 .etiq{
     width: 450px;
-    display: block;
-    background-color: rgba(125, 125, 255, 0.822);
-    color: #fff;
+    background-color: rgba(255, 247,209);
     text-align: justify;
     margin: 20px;
-    padding: 20px;
+    box-shadow: #000 0px 2px 10px;
+
+
 }
 .etiq p{
     padding: 20px;
+    
+    word-wrap: break-word;
 }
-.lista h3{
-        background-color: crimson;
-        width: 450px;
-        height: 50px;
-    color: rgb(247, 241, 241);
-    margin-top: -20px;
-    padding: 10px;
+.etiq1 p{
+    padding: 20px;
 }
+
 .etiq1{
     width: 450px;
     display: block;
-    margin:20px ;
-    padding: 20px;
-    background-color:rgb(255, 118, 118);
+    background-color: rgba(242, 230,255);
+    text-align: justify;
+    margin: 20px;
+    box-shadow: #000 0px 2px 10px;
+
 
 }
