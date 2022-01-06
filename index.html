@@ -4,67 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="master.css">
     <title>Lista de tarefa</title>
-    <style>
-        body{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-flow: column;
-        }
-        .lista{
-            display: flex;
-            flex-flow: column;
-            width: auto;
-            height: auto;
-            margin-top: 70px;
-        }
-        .etiq{
-            width: 450px;
-            display: block;
-            background-color: rgba(125, 125, 255, 0.822);
-            color: #fff;
-            text-align: justify;
-            margin: 20px;
-            padding: 20px;
-           
-        
-        }
-        .etiq p{
-            padding: 20px;
-        }
-        .lista h3{
-                background-color: crimson;
-                width: 450px;
-                height: 50px;
-            color: rgb(247, 241, 241);
-            margin-top: -20px;
-            padding: 10px;
-        }
-        .etiq1{
-            width: 450px;
-            display: block;
-            margin:20px ;
-            padding: 20px;
-            background-color:rgb(255, 118, 118);
-
-        }
-        
-    </style>
 </head>
 <body>
+    <div class="body">
     <form action="" id="">
+        <h1>Bloco de Anotações</h1><br>
         <input type="text" placeholder="Tituto da Etiqueta" id="ttulo"><br>
-        <label for="input" aria-autocomplete="inline">Texto</label>
-        <textarea name="" id="txt" cols="30" rows="5"></textarea>
-        <input type="button" on  value="Guardar"  id="btn"/>
-        <input type="checkbox" name="" id="ck" value="0" >
-       
+        
+        <textarea name="" id="txt" cols="30" rows="5" placeholder="Descrição da Tarefa..."></textarea><br>
+        <input type="button"  value="Guardar"  id="btn"/>
     </form>
     <div class="lista">
         
     </div>
+</div>
     <script src="main.js"></script>
 </body>
 </html>
