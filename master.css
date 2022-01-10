@@ -4,7 +4,7 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body{
-    height: auto;
+    /* height: auto; */
     background:linear-gradient(rgb(0, 162, 255), rgb(196, 238, 255));
 
 }
@@ -52,7 +52,43 @@ input[type="button"]{
 }
 /* FIM */
 
+/*ESTILIZAÇÃO DOS BOTÕES */
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    height: 50px;
+    width: 100%;
+    
 
+}
+.btns button{
+    width: 70px;
+    height: 20px;
+    float: left;
+    background-color: red;
+    border: none;
+    border-radius: 50px;
+    margin: 5px;
+}
+.btns button:hover{
+   background-color: rgb(230, 230, 230);
+   cursor: pointer;
+}
+#edit{
+    background-color: darkgoldenrod;
+    color: #fff;
+}
+#apa{
+    background-color: red;
+    color: #fff;
+}
+#grav{
+    background-color: rgb(9, 120, 247);
+    color: #fff;
+}
+
+/* FIM DA ESTILIZAÇÃO */
 /* ESTILIZAÇÃO DA LISTA DAS NOTAS */
 .lista{
     display: flex;
@@ -103,3 +139,15 @@ input[type="button"]{
 
 
 }
+.dt{
+    background-color: rgb(103, 103, 104);
+    border-top: 5px ;
+    border-top-left-radius: 50px;
+    text-align: right;
+    align-items: center;
+    color: cornsilk;
+    height: 50px;
+}
+
+/*FIM DA ESTILIZAÇÃO */
+

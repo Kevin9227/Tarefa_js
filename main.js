@@ -2,7 +2,10 @@ var titulos = document.getElementById("ttulo"),
 msg         = document.getElementById("txt"),
 corpo       = document.getElementsByClassName('lista'),
 i           = 0,
-tst         =[]
+lista_divs        =[],
+dataCria   = new Date(),
+dataFormatada=((dataCria.getDate() )) + "/" + ((dataCria.getMonth() + 1)) + "/" + dataCria.getFullYear()
+
 
  document.getElementById("btn").addEventListener('click',function(){
    
@@ -10,23 +13,22 @@ tst         =[]
         alert('O titulo ou a messagem não pode ser vazio...')
         return false
     }else{
-        var   dataCria   = new Date(),
-        lis        = ++i
-        i          = lis
-tst.push(corpo[0])
-console.log(tst)
+        var   lis        = ++i;
+         i          = lis
+lista_divs.push(corpo[0])
+console.log(lista_divs)
 console.log(i)
 console.log(msg)
 if((i%2)==0){
      corpo[0].innerHTML +=`<div class='etiq1' id="i${i}">
    <div class="titulo"> <h3>${titulos.value}</h3></div>
     <div class="btns">
-        <button onclick="editar()">editar</button>
-        <button>apagar</button>
-        <button>gravar</button>
+        <button onclick="editar()" id="edit">editar</button>
+        <button id="apa">apagar</button>
+        <button id="grav">gravar</button>
     </div>
     <p id="txt${i}">${msg.value}</p>
-       ${dataCria.getUTCDay()}
+    <div class="dt">Data: ${dataFormatada}</div> 
    </div> `
   msg.value=""
   console.log(msg.length)
@@ -34,12 +36,12 @@ if((i%2)==0){
    corpo[0].innerHTML +=`<div class='etiq' id="i${i}">
    <div class="titulo1"> <h3>${titulos.value}</h3></div>
   <div class="btns">
-      <button onclick="editar()">editar</button>
-      <button>apagar</button>
-      <button onclik="alterar()">gravar</button>
+      <button onclick="editar()" id="edit">editar</button>
+      <button id="apa">apagar</button>
+      <button onclik="alterar()" id="grav">gravar</button>
   </div>
   <p id="txt${i}">${msg.value}</p>
-     ${dataCria.getUTCDay()}
+  <div class="dt">Data: ${dataFormatada}</div> 
  </div>`;
   
   msg.value=""
@@ -53,7 +55,7 @@ if((i%2)==0){
      var   nr
       nr = i-1
         console.log(i)
-   txt =  tst[nr].children.i1.children[2].textContent
+   txt =  lista_divs[nr].children.i1.children[2].textContent
     msg.value = txt
     console.log(txt)
      }else{
@@ -61,7 +63,7 @@ if((i%2)==0){
       var txt, nr , t='i'
       nr =i-1
          console.log(nr)
-         txt =  tst[nr].children.t+nr.children[2].textContent
+         txt =  lista_divs[nr].children.t+nr.children[2].textContent
         msg.value = txt
         
      }
@@ -71,7 +73,7 @@ if((i%2)==0){
     var   nr
     nr = i-1
       console.log(i)
- txt =  tst[nr].children.i1.children[2].textContent
+ txt =  lista_divs[nr].children.i1.children[2].textContent
  msg.value 
  }
 document.getElementById("ck").addEventListener('',function(){
@@ -84,8 +86,8 @@ document.getElementById("ck").addEventListener('',function(){
         this.value='0'
         document.querySelector("ul").style.display='none';
     }
-    var tst = document.getElementById('ts')
-    console.log(tst)
+    var lista_divs = document.getElementById('ts')
+    console.log(lista_divs)
 })
 
 
