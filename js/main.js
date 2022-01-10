@@ -23,7 +23,7 @@ if((i%2)==0){
      corpo[0].innerHTML +=`<div class='etiq1' id="i${i}">
    <div class="titulo"> <h3>${titulos.value}</h3></div>
     <div class="btns">
-        <button onclick="editar()" id="edit">editar</button>
+        <button id="edit">editar</button>
         <button id="apa">apagar</button>
         <button id="grav">gravar</button>
     </div>
@@ -36,7 +36,7 @@ if((i%2)==0){
    corpo[0].innerHTML +=`<div class='etiq' id="i${i}">
    <div class="titulo1"> <h3>${titulos.value}</h3></div>
   <div class="btns">
-      <button onclick="editar()" id="edit">editar</button>
+      <button id="edit">editar</button>
       <button id="apa">apagar</button>
       <button onclik="alterar()" id="grav">gravar</button>
   </div>
@@ -88,6 +88,10 @@ document.getElementById("ck").addEventListener('',function(){
     }
     var lista_divs = document.getElementById('ts')
     console.log(lista_divs)
+})
+document.getElementById("edit").addEventListener("click",function(){
+    var rep = document.getElementById("txt1")
+    rep.replace(`<textarea name="" id="txt" cols="3" rows="5" placeholder="Descrição da Tarefa...">${msg.value}</textarea><br>`)
 })
 
 
