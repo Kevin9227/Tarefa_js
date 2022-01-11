@@ -189,6 +189,12 @@ input[type="button"]{
         width: 350px;
         height: 25px;
     }
+    .titulo h3{
+       font-size: 12pt;
+    }
+    .titulo1 h3{
+        font-size: 12pt;
+    }
     .etiq{
         width: 350px;
         background-color: rgba(255, 247,209);
