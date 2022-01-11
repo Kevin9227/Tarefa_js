@@ -62,16 +62,14 @@ input[type="button"]{
     
 
 }
-.btns button{
-    width: 70px;
-    height: 20px;
+.btns i{
+    
     float: left;
-    background-color: red;
     border: none;
     border-radius: 50px;
     margin: 5px;
 }
-.btns button:hover{
+i:hover{
    background-color: rgb(230, 230, 230);
    cursor: pointer;
 }
@@ -110,6 +108,16 @@ input[type="button"]{
     background-color: rgba(255, 242,171);
     width: 450px;
     height: 50px;
+    display: flex;
+    align-items: center;
+}
+.titulo h3{
+    margin: 20px;
+    width: 250px;
+}
+.titulo1 h3{
+    margin: 20px;
+    width: 250px;
 }
 .etiq{
     width: 450px;

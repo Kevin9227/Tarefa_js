@@ -10,10 +10,15 @@ dataFormatada=((dataCria.getDate() )) + "/" + ((dataCria.getMonth() + 1)) + "/" 
  document.getElementById("btn").addEventListener('click',function(){
    
     if(titulos.value==='' || msg.value===''){
+        
         alert('O titulo ou a messagem não pode ser vazio...')
         return false
     }else{
-        var   lis        = ++i;
+        console.log(titulos)
+       if(titulos.length>=30){
+           return alert('O titulo não pode conter mais de 30 Caracter...')
+       }else{
+             var   lis        = ++i;
          i          = lis
 lista_divs.push(corpo[0])
 console.log(lista_divs)
@@ -21,12 +26,14 @@ console.log(i)
 console.log(msg)
 if((i%2)==0){
      corpo[0].innerHTML +=`<div class='etiq1' id="i${i}">
-   <div class="titulo"> <h3>${titulos.value}</h3></div>
-    <div class="btns">
-        <button id="edit">editar</button>
-        <button id="apa">apagar</button>
-        <button id="grav">gravar</button>
+   <div class="titulo"> <h3>${titulos.value}</h3>
+   <div class="btns">
+   <i class="bi bi-pencil-square" title="Editar" ></i>   
+   <i class="bi bi-x-square" title="Apagar"></i>
+   <i class="bi bi-save2" title="Guardar"></i>
     </div>
+   </div>
+    
     <p id="txt${i}">${msg.value}</p>
     <div class="dt">Data: ${dataFormatada}</div> 
    </div> `
@@ -34,12 +41,14 @@ if((i%2)==0){
   console.log(msg.length)
 }else{
    corpo[0].innerHTML +=`<div class='etiq' id="i${i}">
-   <div class="titulo1"> <h3>${titulos.value}</h3></div>
-  <div class="btns">
-      <button id="edit">editar</button>
-      <button id="apa">apagar</button>
-      <button onclik="alterar()" id="grav">gravar</button>
+   <div class="titulo1"> <h3>${titulos.value}</h3>
+   <div class="btns">
+    <i class="bi bi-pencil-square" title="Editar" ></i>   
+    <i class="bi bi-x-square" title="Apagar"></i>
+    <i class="bi bi-save2" title="Guardar"></i>
   </div>
+   </div>
+  
   <p id="txt${i}">${msg.value}</p>
   <div class="dt">Data: ${dataFormatada}</div> 
  </div>`;
@@ -47,6 +56,8 @@ if((i%2)==0){
   msg.value=""
 
 }
+       }
+     
 }
  })
  function editar(){
