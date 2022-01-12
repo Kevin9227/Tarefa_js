@@ -2,7 +2,7 @@ var titulos = document.getElementById("ttulo"),
 msg         = document.getElementById("txt"),
 corpo       = document.getElementsByClassName('lista'),
 i           = 0,
-lista_divs        =[],
+lista_divs        = [],
 dataCria   = new Date(),
 dataFormatada=((dataCria.getDate() )) + "/" + ((dataCria.getMonth() + 1)) + "/" + dataCria.getFullYear()
 
@@ -20,15 +20,15 @@ dataFormatada=((dataCria.getDate() )) + "/" + ((dataCria.getMonth() + 1)) + "/" 
        }else{
              var   lis        = ++i;
          i          = lis
-lista_divs.push(corpo[0])
+lista_divs.push({id:'id'+i,titulos: titulos.value,message:msg.value})
 console.log(lista_divs)
-console.log(i)
-console.log(msg)
+//console.log(i)
+//console.log(msg)
 if((i%2)==0){
      corpo[0].innerHTML +=`<div class='etiq1' id="i${i}">
    <div class="titulo"> <h3>${titulos.value}</h3>
    <div class="btns">
-   <i class="bi bi-pencil-square" title="Editar" ></i>   
+   <i class="bi bi-pencil-square" title="Editar" onclick="editar('id${i}')" ></i>   
    <i class="bi bi-x-square" title="Apagar"></i>
    <i class="bi bi-save2" title="Guardar"></i>
     </div>
@@ -40,10 +40,10 @@ if((i%2)==0){
   msg.value=""
   console.log(msg.length)
 }else{
-   corpo[0].innerHTML +=`<div class='etiq' id="i${i}">
+   corpo[0].innerHTML +=`<div class='etiq' id="${i}">
    <div class="titulo1"> <h3>${titulos.value}</h3>
    <div class="btns">
-    <i class="bi bi-pencil-square" title="Editar" ></i>   
+   <i class="bi bi-pencil-square" title="Editar"  onclick="editar('id${i}')"></i> 
     <i class="bi bi-x-square" title="Apagar"></i>
     <i class="bi bi-save2" title="Guardar"></i>
   </div>
@@ -59,27 +59,17 @@ if((i%2)==0){
        }
      
 }
+
  })
- function editar(){
-     if(i<=1){
-         alert(true)
-     var   nr
-      nr = i-1
-        console.log(i)
-   txt =  lista_divs[nr].children.i1.children[2].textContent
-    msg.value = txt
-    console.log(txt)
-     }else{
-         alert(false)
-      var txt, nr , t='i'
-      nr =i-1
-         console.log(nr)
-         txt =  lista_divs[nr].children.t+nr.children[2].textContent
-        msg.value = txt
-        
-     }
-     
- }
+ function editar(idObjsto){
+    var  busca   = lista_divs.find(pe => pe.id === idObjsto)
+    document.getElementsByTagName("txt").innerHTML=busca.message
+     console.log(busca.message)
+
+ };
+
+ 
+/*  console.log(lista_divs)
  function alterar(){
     var   nr
     nr = i-1
@@ -104,7 +94,7 @@ document.getElementById("edit").addEventListener("click",function(){
     var rep = document.getElementById("txt1")
     rep.replace(`<textarea name="" id="txt" cols="3" rows="5" placeholder="Descrição da Tarefa...">${msg.value}</textarea><br>`)
 })
-
+ */
 
 
 /* 
