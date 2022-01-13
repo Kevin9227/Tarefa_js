@@ -2,7 +2,8 @@ var titulos = document.getElementById("ttulo"),
 msg         = document.getElementById("txt"),
 corpo       = document.getElementsByClassName('lista'),
 i           = 0,
-lista_divs        = [],
+lista_divs    = [],
+lista_items   = []
 dataCria   = new Date(),
 dataFormatada=((dataCria.getDate() )) + "/" + ((dataCria.getMonth() + 1)) + "/" + dataCria.getFullYear()
 
@@ -21,15 +22,17 @@ dataFormatada=((dataCria.getDate() )) + "/" + ((dataCria.getMonth() + 1)) + "/" 
              var   lis        = ++i;
          i          = lis
 lista_divs.push({id:'id'+i,titulos: titulos.value,message:msg.value})
+lista_items.push(corpo[0])
 console.log(lista_divs)
+console.log(lista_items)
 //console.log(i)
 //console.log(msg)
 if((i%2)==0){
      corpo[0].innerHTML +=`<div class='etiq1' id="i${i}">
    <div class="titulo"> <h3>${titulos.value}</h3>
    <div class="btns">
-   <i class="bi bi-pencil-square" title="Editar" onclick="editar('id${i}')" ></i>   
-   <i class="bi bi-x-square" title="Apagar"></i>
+   <i class="bi bi-pencil-square" title="Editar" onclick="editar('id${i}','.etiq1')" ></i>   
+   <i class="bi bi-x-square" title="Apagar" onclick="apagar('.etiq1')"></i>
    <i class="bi bi-save2" title="Guardar"></i>
     </div>
    </div>
@@ -38,13 +41,13 @@ if((i%2)==0){
     <div class="dt">Data: ${dataFormatada}</div> 
    </div> `
   msg.value=""
-  console.log(msg.length)
+
 }else{
    corpo[0].innerHTML +=`<div class='etiq' id="${i}">
    <div class="titulo1"> <h3>${titulos.value}</h3>
    <div class="btns">
-   <i class="bi bi-pencil-square" title="Editar"  onclick="editar('id${i}')"></i> 
-    <i class="bi bi-x-square" title="Apagar"></i>
+   <i class="bi bi-pencil-square" title="Editar"  onclick="editar('id${i}','.etiq')"></i> 
+    <i class="bi bi-x-square" title="Apagar" onclick="apagar('.etiq')" ></i>
     <i class="bi bi-save2" title="Guardar"></i>
   </div>
    </div>
@@ -54,19 +57,34 @@ if((i%2)==0){
  </div>`;
   
   msg.value=""
-
+  console.log(corpo)
 }
        }
      
 }
 
  })
- function editar(idObjsto){
-    var  busca   = lista_divs.find(pe => pe.id === idObjsto)
-    document.getElementsByTagName("txt").innerHTML=busca.message
-     console.log(busca.message)
+ function editar(idObjsto,este){
+    var toxto= `document.querySelector(${este}).children.txt${i}.innerText=${msg.value} `  //busca   = lista_divs.find(pe => pe.id === idObjsto),
+    
+    console.log(toxto)
 
  };
+
+ function apagar(este){
+     
+    if(confirm("Deseja apagar essa Nota !")){
+         var busca =document.querySelector(este).remove()
+    }else{
+        return
+    }
+   
+     //.filter(pe => pe.id !== este);
+
+     
+    
+     
+ }
 
  
 /*  console.log(lista_divs)
