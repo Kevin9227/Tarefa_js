@@ -32,8 +32,8 @@ if((i%2)==0){
    <div class="titulo"> <h3>${titulos.value}</h3>
    <div class="btns">
    <i class="bi bi-pencil-square" title="Editar" onclick="editar('id${i}','.etiq1')" ></i>   
-   <i class="bi bi-x-square" title="Apagar" onclick="apagar('.etiq1')"></i>
-   <i class="bi bi-save2" title="Guardar"></i>
+   <i disabled class="bi bi-x-square" title="Apagar" onclick="apagar('.etiq1')"></i>
+   <i disabled class="bi bi-save2" title="Guardar" onclick="salvar('id${i}','.etiq1')"></i>
     </div>
    </div>
     
@@ -47,8 +47,8 @@ if((i%2)==0){
    <div class="titulo1"> <h3>${titulos.value}</h3>
    <div class="btns">
    <i class="bi bi-pencil-square" title="Editar"  onclick="editar('id${i}','.etiq')"></i> 
-    <i class="bi bi-x-square" title="Apagar" onclick="apagar('.etiq')" ></i>
-    <i class="bi bi-save2" title="Guardar"></i>
+    <i disabled class="bi bi-x-square" title="Apagar" onclick="apagar('.etiq')" ></i>
+    <i disabled class="bi bi-save2" title="Guardar"  onclick="salvar('id${i}','.etiq')"></i>
   </div>
    </div>
   
@@ -65,9 +65,12 @@ if((i%2)==0){
 
  })
  function editar(idObjsto,este){
-    var toxto= `document.querySelector(${este}).children.txt${i}.innerText=${msg.value} `  //busca   = lista_divs.find(pe => pe.id === idObjsto),
-    
-    console.log(toxto)
+    var toxto= 0 ,
+    busca   = lista_divs.find(pe => pe.id === idObjsto)
+    //document.querySelector(${este}).children.txt${i}.innerText=${msg.value}
+    document.querySelector("#btn").style.background="rgb(228, 228, 228)"
+    document.getElementById("txt").value=busca.message
+    console.log(document.querySelector("#btn").disabled=true)
 
  };
 
@@ -75,18 +78,29 @@ if((i%2)==0){
      
     if(confirm("Deseja apagar essa Nota !")){
          var busca =document.querySelector(este).remove()
+         alert("A nota, foi apagada com sucesso...")
     }else{
         return
     }
+    
    
      //.filter(pe => pe.id !== este);
 
      
-    
-     
  }
 
- 
+ function salvar(idObjsto,este){
+      var   busca   = lista_divs.find(pe => pe.id === idObjsto)
+        if( document.getElementById("txt").value ==="" || idObjsto != busca.id){
+            alert("A nota não pertence a este intem..")
+        }else{
+           // document.querySelector(${este}).children.txt${i}.innerText=${msg.value}
+        busca.message = document.getElementById("txt").value
+        document.querySelector("#btn").style.background="rgb(9, 120, 247)"
+        document.querySelector(este).children.txti.innerText=busca.value
+        console.log(document.querySelector("#btn").disabled=false)
+        }
+    }
 /*  console.log(lista_divs)
  function alterar(){
     var   nr
