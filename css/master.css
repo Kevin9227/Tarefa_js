@@ -94,7 +94,7 @@ i:hover{
     flex-flow:wrap;
     justify-content: center;
     width: 100%;
-    
+    scroll-behavior: smooth;
     margin-top: 50px;
     overflow-y:auto ;
 }

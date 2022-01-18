@@ -7,7 +7,7 @@ lista_items   = []
 dataCria   = new Date(),
 dataFormatada=((dataCria.getDate() )) + "/" + ((dataCria.getMonth() + 1)) + "/" + dataCria.getFullYear()
 
-
+window.scrollTo(0,0);
  document.getElementById("btn").addEventListener('click',function(){
    
     if(titulos.value==='' || msg.value===''){
@@ -27,6 +27,7 @@ console.log(lista_divs)
 console.log(lista_items)
 //console.log(i)
 //console.log(msg)
+
 if((i%2)==0){
      corpo[0].innerHTML +=`<div class='etiq1' id="i${i}">
    <div class="titulo"> <h3>${titulos.value}</h3>
